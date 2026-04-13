@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash(create directories)",
+      "Bash(list files and verify structure)",
+      "Bash(run python scripts)",
+      "WebSearch",
+      "WebFetch",
+      "Skill(*)",
+      "mcp__blender__*",
+      "mcp__Claude_Preview__*"
+    ]
+  },
+  "project": {
+    "name": "CyberPsych Kids",
+    "description": "نظام إنشاء محتوى تعليمي إبداعي عن علم النفس السيبراني للأطفال والشباب",
+    "version": "1.0.0",
+    "language": "ar",
+    "ageGroups": ["2-4", "4-6", "6-8", "8-10", "10-12", "12-14", "14-16", "16-18", "18-28", "28-40"]
+  }
+}

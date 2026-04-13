@@ -1,0 +1,35 @@
+# Output files (user-generated content)
+output/
+
+# Audio files (too large for git)
+docs/*.m4a
+docs/*.mp3
+docs/*.wav
+
+# Environment and secrets
+.env
+*.key
+api_keys.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Temp files
+*.tmp
+*.bak
+*.swp
+~$*
+
+# Node modules (if any)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

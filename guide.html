@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPsych Kids - دليل الاستخدام</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --accent: #10b981;
+            --accent-light: #34d399;
+            --bg: #f8fafc;
+            --bg-card: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --code-bg: #1e293b;
+            --code-text: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-lg: 0 4px 14px rgba(0,0,0,0.1);
+            --radius: 10px;
+            --nav-width: 260px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* --- NAV SIDEBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: var(--nav-width);
+            height: 100vh;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 24px 16px;
+            z-index: 100;
+        }
+        nav .logo {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--primary);
+        }
+        nav .logo h2 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        nav .logo small {
+            color: var(--text-light);
+            font-size: 0.75rem;
+        }
+        nav a {
+            display: block;
+            padding: 8px 12px;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav a:hover, nav a.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* --- MAIN CONTENT --- */
+        main {
+            margin-right: var(--nav-width);
+            padding: 40px 48px 80px;
+            max-width: 900px;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            text-align: center;
+            padding: 48px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            border-radius: var(--radius);
+            margin-bottom: 48px;
+        }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .hero p { opacity: 0.9; font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
+
+        /* --- SECTIONS --- */
+        section { margin-bottom: 48px; }
+        section > h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+        }
+        h3 { font-size: 1.15rem; color: var(--primary-dark); margin: 20px 0 10px; }
+
+        p, li { color: var(--text); }
+        ul, ol { padding-right: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 6px; }
+
+        /* --- CARDS --- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        .card .age-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+        .card h4 { color: var(--primary-dark); margin-bottom: 6px; }
+        .card p { font-size: 0.88rem; color: var(--text-light); }
+        .card .level {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            background: #ecfdf5;
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* --- TABLES --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        th {
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 14px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #f1f5f9; }
+
+        /* --- CODE BLOCKS --- */
+        pre {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 16px 20px;
+            border-radius: var(--radius);
+            overflow-x: auto;
+            margin: 12px 0;
+            font-size: 0.88rem;
+            direction: ltr;
+            text-align: left;
+        }
+        code {
+            font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+        }
+        p code, li code {
+            background: #eef2ff;
+            color: var(--primary);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        /* --- COLLAPSIBLE --- */
+        details {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 8px;
+            box-shadow: var(--shadow);
+        }
+        details summary {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-dark);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        details summary::before {
+            content: '\25C0';
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+            color: var(--primary);
+        }
+        details[open] summary::before {
+            transform: rotate(-90deg);
+        }
+        details .content {
+            padding: 0 16px 16px;
+        }
+
+        /* --- STEPS --- */
+        .steps { counter-reset: step; list-style: none; padding: 0; }
+        .steps li {
+            counter-increment: step;
+            padding: 12px 16px 12px 0;
+            position: relative;
+            padding-right: 48px;
+            margin-bottom: 8px;
+        }
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        /* --- EXAMPLE BOX --- */
+        .example {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 1px solid #bbf7d0;
+            border-right: 4px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .example h4 { color: #065f46; margin-bottom: 8px; }
+
+        /* --- TOOL BADGE --- */
+        .tool-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+        .tool-badge.paid { background: #fef3c7; color: #92400e; }
+        .tool-badge.free { background: #d1fae5; color: #065f46; }
+        .tool-badge.core { background: #dbeafe; color: #1e40af; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 24px;
+            margin-right: var(--nav-width);
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+        footer a { color: var(--primary); text-decoration: none; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-left: none;
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px;
+                padding: 12px;
+            }
+            nav .logo { width: 100%; margin-bottom: 8px; padding-bottom: 8px; }
+            nav a { font-size: 0.8rem; padding: 6px 10px; }
+            main { margin-right: 0; padding: 24px 16px 60px; }
+            footer { margin-right: 0; }
+            .cards { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <h2>CyberPsych Kids</h2>
+        <small>علم النفس السيبراني للأطفال</small>
+    </div>
+    <a href="#intro">مقدمة</a>
+    <a href="#install">التثبيت</a>
+    <a href="#commands">الأوامر</a>
+    <a href="#age-groups">الفئات العمرية</a>
+    <a href="#templates">القوالب</a>
+    <a href="#tools">الأدوات</a>
+    <a href="#examples">أمثلة عملية</a>
+    <a href="#sources">المصادر</a>
+</nav>
+
+<main>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>CyberPsych Kids</h1>
+        <p>نظام متكامل لإنشاء محتوى تعليمي إبداعي عن علم النفس السيبراني للأطفال والشباب، مبني على أسس علمية ومتوافق مع القيم الإسلامية والثقافة العربية.</p>
+    </div>
+
+    <!-- 1. INTRODUCTION -->
+    <section id="intro">
+        <h2>مقدمة</h2>
+        <p><strong>علم النفس السيبراني (Cyber Psychology)</strong> هو فرع من علم النفس يدرس تأثير التكنولوجيا والفضاء الرقمي على السلوك البشري والصحة النفسية. مع التعرض المبكر للأطفال للأجهزة الذكية، تبرز الحاجة لمحتوى عربي متخصص يحميهم ويوعيهم.</p>
+        <p>يوفر هذا النظام أدوات لإنشاء قصص وألعاب وسيناريوهات فيديو وخطط دروس وأنشطة تفاعلية، تغطي 10 فئات عمرية من سن 2 إلى 40 سنة.</p>
+
+        <h3>المنهجية</h3>
+        <ul>
+            <li><strong>Evidence-Based:</strong> محتوى مبني على أبحاث علمية موثقة</li>
+            <li><strong>Story-Lesson-Activity:</strong> كل موضوع يتبع تسلسل القصة ثم الدرس ثم النشاط</li>
+            <li><strong>Positive Framing:</strong> التركيز على ما يجب فعله بدلاً من ما يجب تجنبه</li>
+            <li><strong>Cultural Bridge:</strong> ربط المفاهيم العالمية بالثقافة العربية الإسلامية</li>
+            <li><strong>Progressive Complexity:</strong> تعقيد المحتوى ينمو مع عمر الطفل</li>
+        </ul>
+    </section>
+
+    <!-- 2. INSTALLATION -->
+    <section id="install">
+        <h2>التثبيت</h2>
+        <ol class="steps">
+            <li>
+                <strong>استنساخ المشروع</strong>
+                <pre><code>git clone https://github.com/your-username/cyberpsych-kids.git
+cd cyberpsych-kids</code></pre>
+            </li>
+            <li>
+                <strong>فتح المشروع مع Claude Code</strong>
+                <pre><code>claude</code></pre>
+                <p>سيقرأ Claude ملف <code>CLAUDE.md</code> تلقائياً ويفعّل جميع الأوامر.</p>
+            </li>
+            <li>
+                <strong>البدء بإنشاء المحتوى</strong>
+                <pre><code>/story التنمر الإلكتروني --age 8-10 --output html --lang ar</code></pre>
+            </li>
+        </ol>
+    </section>
+
+    <!-- 3. COMMANDS -->
+    <section id="commands">
+        <h2>الأوامر (22 أمراً)</h2>
+        <p>الصيغة العامة: <code>/command [الموضوع] --age [الفئة] --output [النوع] --lang [اللغة]</code></p>
+
+        <h3>إنشاء المحتوى</h3>
+        <details>
+            <summary>/research - بحث معمّق</summary>
+            <div class="content">
+                <p>بحث معمّق في موضوع سيبراني محدد مع مصادر علمية.</p>
+                <p><strong>المخرج:</strong> Markdown Report</p>
+                <pre><code>/research الإدمان الرقمي عند المراهقين --age 12-14 --lang ar</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/story - قصة تعليمية</summary>
+            <div class="content">
+                <p>إنشاء قصة تعليمية حول مفهوم سيبراني مع شخصيات جذابة وحبكة تعليمية.</p>
+                <p><strong>المخرج:</strong> HTML / Markdown</p>
+                <pre><code>/story الخصوصية الرقمية --age 6-8 --output html --lang ar</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/video-script - سيناريو فيديو</summary>
+            <div class="content">
+                <p>كتابة سيناريو فيديو تعليمي كامل مع Storyboard ومؤثرات مقترحة.</p>
+                <p><strong>المخرج:</strong> Markdown + JSON</p>
+                <pre><code>/video-script البصمة الرقمية --age 14-16 --output markdown --lang ar</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/game-design - تصميم لعبة</summary>
+            <div class="content">
+                <p>تصميم لعبة تعليمية رقمية أو ورقية مع آليات اللعب والقواعد.</p>
+                <p><strong>المخرج:</strong> Game Design Document</p>
+                <pre><code>/game-design كلمات المرور --age 8-10 --output json --lang ar</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/lesson - خطة درس</summary>
+            <div class="content">
+                <p>إعداد خطة درس كاملة مع أنشطة وتقييم ودليل معلم.</p>
+                <p><strong>المخرج:</strong> Lesson Plan (HTML)</p>
+                <pre><code>/lesson التنمر الإلكتروني --age 10-12 --output html --lang both</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/quiz - اختبار تفاعلي</summary>
+            <div class="content">
+                <p>إنشاء اختبار تفاعلي لقياس فهم المفاهيم السيبرانية.</p>
+                <p><strong>المخرج:</strong> HTML Interactive Quiz</p>
+                <pre><code>/quiz الأمان الرقمي --age 10-12 --output html --lang ar</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/infographic - إنفوجرافيك</summary>
+            <div class="content">
+                <p>تصميم إنفوجرافيك توعوي مع تعليمات التنفيذ.</p>
+                <p><strong>المخرج:</strong> Prompt + Instructions</p>
+                <pre><code>/infographic وقت الشاشة --age 6-8 --lang ar</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/social-post - محتوى تواصل اجتماعي</summary>
+            <div class="content">
+                <p>إنشاء محتوى مُعَدّ لمنصات التواصل الاجتماعي المختلفة.</p>
+                <p><strong>المخرج:</strong> Multi-Platform Content</p>
+                <pre><code>/social-post التحقق من الأخبار --age 12-14 --lang ar</code></pre>
+            </div>
+        </details>
+
+        <h3>التصميم والتخطيط</h3>
+        <details>
+            <summary>/character - تصميم شخصية</summary>
+            <div class="content">
+                <p>تصميم شخصية جديدة متسقة للسلسلة مع خلفية وسمات.</p>
+                <p><strong>المخرج:</strong> Character Sheet (JSON)</p>
+                <pre><code>/character حارس الإنترنت --age 6-8 --output json</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/series-plan - تخطيط سلسلة</summary>
+            <div class="content">
+                <p>تخطيط سلسلة محتوى متكاملة بحلقات مترابطة.</p>
+                <p><strong>المخرج:</strong> Series Blueprint</p>
+                <pre><code>/series-plan أبطال الأمان --age 8-10 --output markdown</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/parent-guide - دليل الوالدين</summary>
+            <div class="content">
+                <p>إعداد دليل إرشادي شامل للوالدين حول موضوع سيبراني.</p>
+                <p><strong>المخرج:</strong> PDF-Ready Markdown</p>
+                <pre><code>/parent-guide وقت الشاشة --age 2-4 --output html --lang ar</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/workshop - ورشة عمل</summary>
+            <div class="content">
+                <p>تصميم ورشة عمل تدريبية كاملة مع مواد ونشاطات.</p>
+                <p><strong>المخرج:</strong> Workshop Kit</p>
+                <pre><code>/workshop السلامة الرقمية --age 10-12 --output html</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/activity - نشاط تفاعلي</summary>
+            <div class="content">
+                <p>تصميم نشاط تفاعلي مستقل يمكن استخدامه في الصف أو المنزل.</p>
+                <p><strong>المخرج:</strong> Activity Sheet</p>
+                <pre><code>/activity كلمة السر القوية --age 8-10 --output html</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/song - أنشودة تعليمية</summary>
+            <div class="content">
+                <p>كتابة أنشودة تعليمية مع ملاحظات لحنية.</p>
+                <p><strong>المخرج:</strong> Lyrics + Notes</p>
+                <pre><code>/song الأمان على الإنترنت --age 4-6 --lang ar</code></pre>
+            </div>
+        </details>
+
+        <h3>الأدوات والتكامل</h3>
+        <details>
+            <summary>/freepik - تصميم صور AI</summary>
+            <div class="content">
+                <p>توليد Prompt مخصص لتصميم صور توضيحية على Freepik AI.</p>
+                <p><strong>المخرج:</strong> Image Prompt</p>
+                <pre><code>/freepik غلاف قصة الخصوصية --age 6-8</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/blender-scene - مشهد ثلاثي الأبعاد</summary>
+            <div class="content">
+                <p>إنشاء مشهد تعليمي ثلاثي الأبعاد في Blender عبر MCP.</p>
+                <p><strong>المخرج:</strong> Blender Scene</p>
+                <pre><code>/blender-scene فصل دراسي رقمي --age 10-12</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/age-adapt - تكييف المحتوى</summary>
+            <div class="content">
+                <p>تكييف محتوى موجود لفئة عمرية مختلفة مع الحفاظ على الجوهر.</p>
+                <p><strong>المخرج:</strong> Adapted Content</p>
+                <pre><code>/age-adapt story-01.html --age 12-14</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/review - مراجعة المحتوى</summary>
+            <div class="content">
+                <p>مراجعة محتوى موجود وفق معايير الجودة التربوية والثقافية.</p>
+                <p><strong>المخرج:</strong> Review Report</p>
+                <pre><code>/review story-01.html</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/export - تصدير المحتوى</summary>
+            <div class="content">
+                <p>تصدير المحتوى بالتنسيق المطلوب (HTML, PDF, Markdown).</p>
+                <p><strong>المخرج:</strong> Multiple Formats</p>
+                <pre><code>/export story-01.html --output pdf</code></pre>
+            </div>
+        </details>
+
+        <h3>محتوى متخصص</h3>
+        <details>
+            <summary>/therapy-plan - خطة علاجية</summary>
+            <div class="content">
+                <p>إعداد خطة علاجية للتعامل مع مشكلات سيبرانية مثل الإدمان الرقمي أو التنمر.</p>
+                <p><strong>المخرج:</strong> Therapy Plan</p>
+                <pre><code>/therapy-plan إدمان الألعاب --age 12-14 --output markdown</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/family-game - لعبة عائلية</summary>
+            <div class="content">
+                <p>تصميم لعبة عائلية تفاعلية حول مفاهيم الأمان الرقمي.</p>
+                <p><strong>المخرج:</strong> Family Game Kit</p>
+                <pre><code>/family-game تحدي الأمان --age 8-10 --output html</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/tool-guide - دليل أداة رقمية</summary>
+            <div class="content">
+                <p>إعداد دليل لاستخدام أداة رقمية بشكل آمن ومسؤول.</p>
+                <p><strong>المخرج:</strong> Tool Guide</p>
+                <pre><code>/tool-guide يوتيوب كيدز --age 4-6 --output html</code></pre>
+            </div>
+        </details>
+    </section>
+
+    <!-- 4. AGE GROUPS -->
+    <section id="age-groups">
+        <h2>الفئات العمرية (10 فئات)</h2>
+        <div class="cards">
+            <div class="card">
+                <span class="age-badge">2-4 سنوات</span>
+                <h4>عالم الشاشة السحري</h4>
+                <p>ألوان وأشكال بسيطة، أغاني قصيرة، تعريف أولي بالأجهزة الذكية كأدوات لها وقت محدد.</p>
+                <span class="level">تمهيدي</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">4-6 سنوات</span>
+                <h4>مغامرات في عالم الإنترنت</h4>
+                <p>قصص مصورة قصيرة وألعاب بسيطة تعرّف الطفل على مفهوم الأمان الرقمي الأساسي.</p>
+                <span class="level">أساسي مبكر</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">6-8 سنوات</span>
+                <h4>فريق الأمان الرقمي</h4>
+                <p>قصص تفاعلية وأنشطة عملية تبني الوعي بالخصوصية والتواصل الآمن.</p>
+                <span class="level">أساسي</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">8-10 سنوات</span>
+                <h4>محققو الإنترنت</h4>
+                <p>مغامرات تحقيقية وتحديات ذهنية تعلّم التفكير النقدي والتمييز بين المعلومات.</p>
+                <span class="level">متوسط مبكر</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">10-12 سنة</span>
+                <h4>أبطال العالم الرقمي</h4>
+                <p>مشاريع جماعية وسيناريوهات واقعية تعزز المسؤولية الرقمية.</p>
+                <span class="level">متوسط</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">12-14 سنة</span>
+                <h4>الحياة الرقمية الذكية</h4>
+                <p>نقاشات ودراسات حالة وتحليل نقدي لمواقف رقمية معقدة.</p>
+                <span class="level">متقدم مبكر</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">14-16 سنة</span>
+                <h4>قادة العصر الرقمي</h4>
+                <p>قيادة أقران ومشاريع مجتمعية تعزز الدور الإيجابي في المجتمع الرقمي.</p>
+                <span class="level">متقدم</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">16-18 سنة</span>
+                <h4>المواطن الرقمي المسؤول</h4>
+                <p>بحث مستقل ومبادرات شخصية تؤسس لحياة رقمية ناضجة ومسؤولة.</p>
+                <span class="level">شبه ناضج</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">18-28 سنة</span>
+                <h4>الحياة الرقمية الواعية</h4>
+                <p>محتوى مهني وصحة نفسية رقمية للشباب في بيئة العمل والدراسة.</p>
+                <span class="level">شباب</span>
+            </div>
+            <div class="card">
+                <span class="age-badge">28-40 سنة</span>
+                <h4>الوالدية الرقمية والقيادة</h4>
+                <p>أدلة إرشادية وأدوات مراقبة واعية لحماية الأطفال مع احترام استقلاليتهم.</p>
+                <span class="level">والدين</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TEMPLATES -->
+    <section id="templates">
+        <h2>القوالب (10 قوالب)</h2>
+        <p>قوالب جاهزة في مجلد <code>templates/</code> تسرّع عملية إنتاج المحتوى:</p>
+        <table>
+            <thead>
+                <tr><th>#</th><th>القالب</th><th>الاستخدام</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>story-template.md</td><td>قالب القصة التعليمية</td></tr>
+                <tr><td>2</td><td>video-script-template.md</td><td>قالب سيناريو الفيديو</td></tr>
+                <tr><td>3</td><td>game-design-template.md</td><td>قالب وثيقة تصميم اللعبة</td></tr>
+                <tr><td>4</td><td>lesson-plan-template.md</td><td>قالب خطة الدرس</td></tr>
+                <tr><td>5</td><td>workshop-template.md</td><td>قالب تصميم ورشة العمل</td></tr>
+                <tr><td>6</td><td>character-sheet-template.json</td><td>قالب ملف الشخصية</td></tr>
+                <tr><td>7</td><td>quiz-template.html</td><td>قالب الاختبار التفاعلي</td></tr>
+                <tr><td>8</td><td>infographic-template.md</td><td>قالب الإنفوجرافيك</td></tr>
+                <tr><td>9</td><td>parent-guide-template.md</td><td>قالب دليل الوالدين</td></tr>
+                <tr><td>10</td><td>social-media-template.md</td><td>قالب محتوى التواصل الاجتماعي</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 6. TOOLS -->
+    <section id="tools">
+        <h2>الأدوات</h2>
+
+        <h3>الأداة الأساسية</h3>
+        <table>
+            <thead><tr><th>الأداة</th><th>الاستخدام</th><th>النوع</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><strong>Claude Code</strong> <span class="tool-badge core">أساسي</span></td>
+                    <td>المحرك الرئيسي - إنشاء المحتوى النصي والتحليل والبرمجة والتخطيط</td>
+                    <td>مدفوع</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>اشتراكات مدفوعة (اختيارية)</h3>
+        <table>
+            <thead><tr><th>الأداة</th><th>الاستخدام</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Freepik</strong> <span class="tool-badge paid">مدفوع</span></td><td>تصميم صور ورسوم توضيحية بالذكاء الاصطناعي</td></tr>
+                <tr><td><strong>Gemini</strong> <span class="tool-badge paid">مدفوع</span></td><td>بحث متقدم وتحليل فيديو وترجمة</td></tr>
+                <tr><td><strong>ChatGPT</strong> <span class="tool-badge paid">مدفوع</span></td><td>عصف ذهني ومراجعة وإنشاء محتوى إضافي</td></tr>
+            </tbody>
+        </table>
+
+        <h3>أدوات مجانية</h3>
+        <table>
+            <thead><tr><th>الأداة</th><th>الاستخدام</th><th>الأعمار</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Blender MCP</strong> <span class="tool-badge free">مجاني</span></td><td>مشاهد ثلاثية الأبعاد وشخصيات وبيئات</td><td>الكل</td></tr>
+                <tr><td><strong>Scratch</strong> <span class="tool-badge free">مجاني</span></td><td>برمجة ألعاب تعليمية بصرية</td><td>6-14</td></tr>
+                <tr><td><strong>GDevelop</strong> <span class="tool-badge free">مجاني</span></td><td>تطوير ألعاب بدون كود</td><td>10-18</td></tr>
+                <tr><td><strong>Canva</strong> <span class="tool-badge free">مجاني</span></td><td>تصميم إنفوجرافيك ومواد بصرية</td><td>الكل</td></tr>
+                <tr><td><strong>CapCut</strong> <span class="tool-badge free">مجاني</span></td><td>مونتاج الفيديوهات التعليمية</td><td>الكل</td></tr>
+                <tr><td><strong>Audacity</strong> <span class="tool-badge free">مجاني</span></td><td>تسجيل وتحرير الأناشيد والتعليقات الصوتية</td><td>الكل</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 7. EXAMPLES -->
+    <section id="examples">
+        <h2>أمثلة عملية</h2>
+
+        <div class="example">
+            <h4>المثال 1: قصة عن الخصوصية الرقمية (6-8 سنوات)</h4>
+            <pre><code>/story الخصوصية الرقمية --age 6-8 --output html --lang ar</code></pre>
+            <p><strong>النتيجة المتوقعة:</strong> قصة HTML تفاعلية بعنوان مثل "سر نورة الرقمي" تحكي عن طفلة تتعلم لماذا لا تشارك معلوماتها الشخصية عبر الإنترنت. تتضمن رسوماً ملونة بألوان دافئة ونشاطاً تفاعلياً في النهاية وقسماً للوالدين.</p>
+        </div>
+
+        <div class="example">
+            <h4>المثال 2: تصميم لعبة عن كلمات المرور (8-10 سنوات)</h4>
+            <pre><code>/game-design كلمات المرور القوية --age 8-10 --output json --lang ar</code></pre>
+            <p><strong>النتيجة المتوقعة:</strong> وثيقة تصميم لعبة بعنوان مثل "حصن كلمة السر" تتضمن آليات اللعب وقواعد النقاط ومستويات الصعوبة. اللاعب يبني كلمات مرور قوية للدفاع عن قلعته الرقمية من المتسللين.</p>
+        </div>
+
+        <div class="example">
+            <h4>المثال 3: خطة درس عن التنمر الإلكتروني (10-12 سنة)</h4>
+            <pre><code>/lesson التنمر الإلكتروني --age 10-12 --output html --lang both</code></pre>
+            <p><strong>النتيجة المتوقعة:</strong> خطة درس مدتها 45 دقيقة تبدأ بسيناريو واقعي عن التنمر الإلكتروني، تليها مناقشة جماعية، ثم نشاط لعب أدوار حيث يتدرب الطلاب على الاستجابة الصحيحة. تتضمن دليل معلم وأوراق عمل وأداة تقييم.</p>
+        </div>
+    </section>
+
+    <!-- 8. SOURCES -->
+    <section id="sources">
+        <h2>المصادر</h2>
+        <p>يستند المشروع إلى مصادر علمية متنوعة في مجالات علم النفس السيبراني وحماية الطفل الرقمي:</p>
+        <table>
+            <thead><tr><th>المجال</th><th>المصادر الرئيسية</th></tr></thead>
+            <tbody>
+                <tr><td>علم النفس السيبراني</td><td>Mary Aiken - The Cyber Effect; APA Cyber Psychology Research</td></tr>
+                <tr><td>نمو الطفل والتكنولوجيا</td><td>AAP Digital Media Guidelines; WHO Screen Time Guidelines</td></tr>
+                <tr><td>الأمان الرقمي للأطفال</td><td>UNICEF Child Online Protection; Internet Watch Foundation</td></tr>
+                <tr><td>التعليم القائم على الأدلة</td><td>Evidence-Based Teaching Strategies; Bloom's Taxonomy</td></tr>
+                <tr><td>التصميم التعليمي</td><td>ADDIE Model; Gamification in Education Research</td></tr>
+                <tr><td>القيم الإسلامية والتربية</td><td>Islamic Pedagogy Research; Arab Child Development Studies</td></tr>
+            </tbody>
+        </table>
+        <p>للاطلاع على القائمة الكاملة للمراجع، راجع ملف <code>DEEP_RESEARCH_SOURCES.md</code> وملفات مجلد <code>knowledge/</code>.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p><strong>CyberPsych Kids</strong> - بناء جيل رقمي واعٍ، محتوى بمحتوى.</p>
+    <p>مرخص بموجب <a href="LICENSE">رخصة MIT</a></p>
+</footer>
+
+<script>
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+
+    function updateActive() {
+        let current = '';
+        sections.forEach(function(section) {
+            const top = section.offsetTop - 100;
+            if (window.scrollY >= top) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActive);
+    updateActive();
+</script>
+
+</body>
+</html>
