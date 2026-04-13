@@ -205,15 +205,44 @@
 | 20 | `/therapy-plan` | إعداد خطة علاجية للمشكلات السيبرانية | Therapy Plan |
 | 21 | `/family-game` | تصميم لعبة عائلية حول الأمان الرقمي | Family Game Kit |
 | 22 | `/tool-guide` | دليل استخدام أداة رقمية بشكل آمن | Tool Guide |
+| 23 | `/project-new` | إنشاء مشروع جديد مع فولدر منظم | Project Folder |
+| 24 | `/project-discuss` | مناقشة مشروع - أفكار وأبحاث وقرارات | Discussion Notes |
+| 25 | `/project-plan` | تخطيط مشروع - خطة وجدول وموارد | Project Plan |
+| 26 | `/project-start` | بدء تنفيذ مشروع مخطط | Implementation |
+| 27 | `/project-status` | عرض حالة المشاريع والتنقل بينها | Status Report |
 
 ### صيغة الأمر العامة
 ```
-/command [topic] --age [group] --output [type] --lang [language]
+/command [topic] --age [group] --output [type] --lang [language] --theme [theme]
 ```
 
-**مثال:**
+**أمثلة:**
 ```
-/story التنمر الإلكتروني --age 8-10 --output html --lang ar
+/story "التنمر الإلكتروني" --age 8-10 --output html --lang ar
+/story "التنمر الإلكتروني" --age 8-10 --theme gulf
+```
+
+### أوامر إدارة المشاريع
+```
+/project-new "اسم-المشروع" --type series --age 8-10     ← إنشاء مشروع جديد
+/project-discuss "اسم-المشروع" --action brainstorm      ← مناقشة وعصف ذهني
+/project-plan "اسم-المشروع"                              ← كتابة الخطة
+/project-start "اسم-المشروع"                             ← بدء التنفيذ
+/project-status                                           ← عرض كل المشاريع
+/project-status "اسم-المشروع"                            ← تفاصيل مشروع محدد
+```
+
+### دورة حياة المشروع
+```
+💬 مناقشة (/project-new + /project-discuss)
+    ↓
+📋 تخطيط (/project-plan)
+    ↓
+🔄 تنفيذ (/project-start + أوامر المحتوى)
+    ↓
+✅ مراجعة (/review)
+    ↓
+📦 نشر (/export)
 ```
 
 ---
