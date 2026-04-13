@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يوسف والشاشة الجائعة - قصة مصورة</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+:root{--p:#2563eb;--g:#10b981;--purple:#7c3aed;--orange:#f97316;--bg:#1a1a2e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);min-height:100vh;padding:0}
+
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;text-align:center;color:#fff;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(124,58,237,.3),transparent);top:20%;right:10%;border-radius:50%;animation:f 6s ease-in-out infinite}
+.cover::after{content:'';position:absolute;width:200px;height:200px;background:radial-gradient(circle,rgba(37,99,235,.3),transparent);bottom:20%;left:10%;border-radius:50%;animation:f 8s ease-in-out infinite reverse}
+@keyframes f{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.cover h1{font-size:3.5rem;font-weight:900;margin-bottom:12px;text-shadow:0 4px 20px rgba(124,58,237,.5);line-height:1.3}
+.cover .sub{font-size:1.3rem;opacity:.9;margin-bottom:16px}
+.cover .age{background:var(--g);padding:8px 24px;border-radius:24px;font-size:1rem;display:inline-block}
+.cover .credits{margin-top:40px;opacity:.5;font-size:.85rem}
+
+.page-wrapper{max-width:1000px;margin:40px auto;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.4);overflow:hidden}
+.page-header{padding:14px 24px;font-size:1.2rem;font-weight:800;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.page-header .num{background:rgba(255,255,255,.2);padding:4px 16px;border-radius:12px;font-size:.9rem}
+.page-img{width:100%;display:block}
+.page-text{padding:24px 28px;font-size:1.05rem;line-height:2;color:#1e293b;border-top:4px solid var(--p)}
+.dialog{background:#f0f7ff;border-right:4px solid var(--p);padding:10px 18px;margin:8px 0;border-radius:0 10px 10px 0;font-weight:600}
+.speaker{font-weight:800;margin-left:6px}
+.speaker.mama{color:var(--orange)}
+.speaker.mariam{color:var(--g)}
+.speaker.monster{color:var(--purple)}
+.narration{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid #f59e0b;border-radius:10px;padding:16px 20px;margin:12px 0;font-weight:600;text-align:center;font-size:1.1rem}
+
+.tips-box{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--g);border-radius:12px;padding:24px;margin:20px 28px 28px}
+.tips-box h3{color:#065f46;margin-bottom:16px;font-size:1.2rem}
+.tip{display:flex;gap:14px;margin:14px 0;padding:12px;background:rgba(255,255,255,.7);border-radius:10px;align-items:flex-start}
+.tip-n{background:var(--g);color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}
+
+.lesson{background:linear-gradient(135deg,#fef9c3,#fef08a);border:3px solid #eab308;border-radius:14px;padding:24px;margin:20px 28px 28px;text-align:center;font-size:1.2rem;font-weight:700;line-height:2}
+.lesson .big{font-size:1.5rem;color:var(--g)}
+
+.activity{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid var(--p);border-radius:12px;padding:24px;margin:20px 28px}
+.activity h3{color:var(--p);margin-bottom:12px;font-size:1.1rem}
+.activity li{margin:10px 0;font-weight:600}
+
+.questions{background:linear-gradient(135deg,#faf5ff,#ede9fe);border:2px solid var(--purple);border-radius:12px;padding:24px;margin:20px 28px 28px}
+.questions h3{color:var(--purple);margin-bottom:12px;font-size:1.1rem}
+.questions li{margin:10px 0;font-weight:600}
+
+.footer{text-align:center;padding:40px;color:#fff;opacity:.5;font-size:.85rem}
+.footer a{color:var(--g)}
+
+@media(max-width:768px){
+.cover h1{font-size:2.2rem}
+.page-wrapper{margin:20px 8px;border-radius:12px}
+.page-text{padding:16px;font-size:.95rem}
+.tips-box,.lesson,.activity,.questions{margin:12px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+<h1>يوسف<br>والشاشة الجائعة</h1>
+<p class="sub">قصة مصورة عن التحكم في العالم الرقمي</p>
+<span class="age">٨ - ١٠ سنوات</span>
+<p class="credits">سلسلة CyberPsych Kids - علم النفس السيبراني للأطفال<br>ثيم مصري عربي إسلامي</p>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page-wrapper">
+<div class="page-header" style="background:linear-gradient(90deg,var(--p),#3b82f6)">
+<span>الصفحة الأولى: يوم عادي في حياة يوسف</span>
+<span class="num">١ / ٥</span>
+</div>
+<img class="page-img" src="../assets/images/page1_full.jpg" alt="الصفحة 1">
+<div class="page-text">
+<div class="narration">يوسف صحي من النوم وأول حاجة عملها... مسك الموبايل! قبل ما يغسل وشه، قبل ما يفطر، قبل ما يقول "صباح الخير" لماما...</div>
+<div class="dialog"><span class="speaker mama">ماما سارة:</span> "يوسف! الفطار جاهز يا حبيبي!"</div>
+<div class="dialog"><span class="speaker">يوسف:</span> "دقيقة واحدة يا ماما..."</div>
+<p style="text-align:center;color:var(--purple);font-weight:800;margin-top:12px;font-size:1.1rem">لكن الدقيقة بقت عشرة... والعشرة بقوا ساعة. 😔</p>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page-wrapper">
+<div class="page-header" style="background:linear-gradient(90deg,var(--purple),#4c1d95)">
+<span>الصفحة الثانية: الشاشة الجائعة تظهر!</span>
+<span class="num">٢ / ٥</span>
+</div>
+<img class="page-img" src="../assets/images/page2_full.jpg" alt="الصفحة 2">
+<div class="page-text">
+<div class="dialog"><span class="speaker monster">الشاشة الجائعة:</span> "أنا الشاشة الجائعة... كل ما تقعد معايا أكتر، أنا بكبر وإنت بتصغّر!"</div>
+<div class="dialog"><span class="speaker">يوسف:</span> "أنا بصغّر إزاي؟!"</div>
+<p>يوسف بص في المراية ولقى عيونه حمرا، ظهره معوّج، وكان حاسس بصداع ومش قادر يركّز. حتى لما صاحبه أحمد ناداه يلعبوا كورة... يوسف رفض. والشاشة الجائعة فضلت تكبر وتكبر!</p>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page-wrapper">
+<div class="page-header" style="background:linear-gradient(90deg,var(--g),#047857)">
+<span>الصفحة الثالثة: مريم تشرح الحقيقة</span>
+<span class="num">٣ / ٥</span>
+</div>
+<img class="page-img" src="../assets/images/page3_full.jpg" alt="الصفحة 3">
+<div class="page-text">
+<div class="dialog"><span class="speaker mariam">مريم:</span> "عارف يا يوسف، الشاشة الجائعة دي مش وحش حقيقي... دي عاداتنا هي اللي بتصنعها! كل ما نقعد على الموبايل أكتر من اللازم، دماغنا بيتعود وبيطلب أكتر وأكتر... زي لما تاكل حلويات كتير!"</div>
+<div class="dialog"><span class="speaker">يوسف:</span> "طب أعمل إيه؟ أنا مش قادر أبطّل!"</div>
+<div class="dialog"><span class="speaker mariam">مريم:</span> "مش لازم تبطّل خالص! لازم بس تتحكم. تعالى أقولك على ٣ حاجات سحرية..."</div>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page-wrapper">
+<div class="page-header" style="background:linear-gradient(90deg,#eab308,#ca8a04)">
+<span>الصفحة الرابعة: الحاجات السحرية الثلاثة</span>
+<span class="num">٤ / ٥</span>
+</div>
+<img class="page-img" src="../assets/images/page4_full.jpg" alt="الصفحة 4">
+<div class="tips-box">
+<h3>الحاجات السحرية الثلاثة:</h3>
+<div class="tip"><span class="tip-n">١</span><div><strong>قاعدة الـ ٢٠:</strong> كل ٢٠ دقيقة على الشاشة، بص بعيد ٢٠ ثانية على حاجة على بعد ٢٠ متر. ده بيريّح عينيك وبيفكّر دماغك إن فيه عالم تاني!</div></div>
+<div class="tip"><span class="tip-n">٢</span><div><strong>أول ما تصحى وآخر ما تنام:</strong> الموبايل مش أول حاجة الصبح ومش آخر حاجة بالليل. ابدأ يومك بالدعاء والفطار، واختمه بقراية أو كلام مع أهلك.</div></div>
+<div class="tip"><span class="tip-n">٣</span><div><strong>البديل الممتع:</strong> اكتب ليست بـ ٥ حاجات بتحبها غير الموبايل. لما تحس إنك عايز تمسك الموبايل من غير سبب، اعمل حاجة من الليست!</div></div>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page-wrapper">
+<div class="page-header" style="background:linear-gradient(90deg,var(--g),var(--p))">
+<span>الصفحة الخامسة: يوسف يتحكم!</span>
+<span class="num">٥ / ٥</span>
+</div>
+<img class="page-img" src="../assets/images/page5_full.jpg" alt="الصفحة 5">
+<div class="page-text">
+<div class="dialog"><span class="speaker">يوسف:</span> "أنا اللي بتحكم فيكِ، مش إنتِ اللي بتتحكمي فيا!"</div>
+<div class="dialog"><span class="speaker mama">ماما سارة:</span> "أنا فخورة بيك يا يوسف. إنت بقيت قوي فعلاً."</div>
+</div>
+<div class="lesson">
+الموبايل والإنترنت أدوات جميلة...<br>
+لكن إنت اللي بتتحكم فيها، مش هي.<br>
+لما تحس إنها بتاخد وقتك وصحتك وأصحابك...<br>
+اعرف إن الشاشة الجائعة بتكبر.<br>
+<span class="big">وإنت أقوى منها!</span>
+</div>
+</div>
+
+<!-- ACTIVITY PAGE -->
+<div class="page-wrapper">
+<div class="page-header" style="background:linear-gradient(90deg,var(--orange),#ea580c)">
+<span>تحدي الأسبوع!</span>
+</div>
+<div class="activity">
+<h3>جرّب بنفسك - تحدي أسبوع مع الشاشة الجائعة!</h3>
+<ol>
+<li>اكتب ٥ حاجات بتحبها غير الموبايل</li>
+<li>جرّب قاعدة الـ ٢٠-٢٠-٢٠ لمدة أسبوع</li>
+<li>سجّل كل يوم: قد إيه قعدت على الشاشة؟ وعملت إيه تاني؟</li>
+<li>في آخر الأسبوع: الشاشة الجائعة كبرت ولا صغرت عندك؟</li>
+</ol>
+</div>
+<div class="questions">
+<h3>ناقش مع أهلك:</h3>
+<ol>
+<li>إيه أكتر حاجة بتعملها على الموبايل؟</li>
+<li>تفتكر الشاشة الجائعة موجودة عندك؟ حجمها إيه؟</li>
+<li>إيه الحاجات الحلوة اللي ممكن تعملها بدل الموبايل؟</li>
+<li>إزاي ممكن كلنا كعيلة نتحكم في وقت الشاشة؟</li>
+</ol>
+</div>
+</div>
+
+<div class="footer">
+<p><strong>CyberPsych Kids</strong> - بناء جيل رقمي واعٍ</p>
+<p><a href="https://github.com/IbrahimBadawy/cyberpsych-kids">github.com/IbrahimBadawy/cyberpsych-kids</a></p>
+<p>MIT License - 2026</p>
+</div>
+
+</body>
+</html>
