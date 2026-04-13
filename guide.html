@@ -325,7 +325,9 @@
     <a href="#intro">مقدمة</a>
     <a href="#install">التثبيت</a>
     <a href="#commands">الأوامر</a>
+    <a href="#projects">إدارة المشاريع</a>
     <a href="#age-groups">الفئات العمرية</a>
+    <a href="#themes">الثيم الثقافي</a>
     <a href="#templates">القوالب</a>
     <a href="#tools">الأدوات</a>
     <a href="#examples">أمثلة عملية</a>
@@ -337,7 +339,7 @@
     <!-- HERO -->
     <div class="hero">
         <h1>CyberPsych Kids</h1>
-        <p>نظام متكامل لإنشاء محتوى تعليمي إبداعي عن علم النفس السيبراني للأطفال والشباب، مبني على أسس علمية ومتوافق مع القيم الإسلامية والثقافة العربية.</p>
+        <p>نظام متكامل لإنشاء محتوى تعليمي إبداعي عن علم النفس السيبراني للأطفال والشباب، مبني على أسس علمية ومتوافق مع القيم الإسلامية والثقافة العربية المصرية. يوفر 27 أمراً ونظام إدارة مشاريع متكامل.</p>
     </div>
 
     <!-- 1. INTRODUCTION -->
@@ -362,7 +364,7 @@
         <ol class="steps">
             <li>
                 <strong>استنساخ المشروع</strong>
-                <pre><code>git clone https://github.com/your-username/cyberpsych-kids.git
+                <pre><code>git clone https://github.com/IbrahimBadawy/cyberpsych-kids.git
 cd cyberpsych-kids</code></pre>
             </li>
             <li>
@@ -379,8 +381,8 @@ cd cyberpsych-kids</code></pre>
 
     <!-- 3. COMMANDS -->
     <section id="commands">
-        <h2>الأوامر (22 أمراً)</h2>
-        <p>الصيغة العامة: <code>/command [الموضوع] --age [الفئة] --output [النوع] --lang [اللغة]</code></p>
+        <h2>الأوامر (27 أمراً)</h2>
+        <p>الصيغة العامة: <code>/command [الموضوع] --age [الفئة] --output [النوع] --lang [اللغة] --theme [الثيم]</code></p>
 
         <h3>إنشاء المحتوى</h3>
         <details>
@@ -565,6 +567,90 @@ cd cyberpsych-kids</code></pre>
                 <pre><code>/tool-guide يوتيوب كيدز --age 4-6 --output html</code></pre>
             </div>
         </details>
+
+        <h3>إدارة المشاريع</h3>
+        <details>
+            <summary>/project-new - إنشاء مشروع جديد</summary>
+            <div class="content">
+                <p>إنشاء مشروع محتوى جديد مع هيكل مجلدات وملفات أساسية.</p>
+                <p><strong>المخرج:</strong> Project Folder</p>
+                <pre><code>/project-new سلسلة أبطال الإنترنت --age 8-10</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/project-discuss - نقاش المشروع</summary>
+            <div class="content">
+                <p>بدء نقاش حول فكرة مشروع وطرح الأفكار والمقترحات.</p>
+                <p><strong>المخرج:</strong> Discussion Document</p>
+                <pre><code>/project-discuss أفكار حلقات سلسلة الأمان الرقمي</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/project-plan - تخطيط المشروع</summary>
+            <div class="content">
+                <p>تحويل نتائج النقاش إلى خطة تنفيذية مفصلة بمراحل ومهام.</p>
+                <p><strong>المخرج:</strong> Project Plan</p>
+                <pre><code>/project-plan</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/project-start - بدء التنفيذ</summary>
+            <div class="content">
+                <p>بدء تنفيذ المشروع وإنتاج المحتوى وفق الخطة الموضوعة.</p>
+                <p><strong>المخرج:</strong> Content Files</p>
+                <pre><code>/project-start</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>/project-status - حالة المشروع</summary>
+            <div class="content">
+                <p>عرض حالة المشروع الحالي ونسبة الإنجاز والمهام المتبقية.</p>
+                <p><strong>المخرج:</strong> Status Report</p>
+                <pre><code>/project-status</code></pre>
+            </div>
+        </details>
+    </section>
+
+    <!-- PROJECT MANAGEMENT -->
+    <section id="projects">
+        <h2>إدارة المشاريع</h2>
+        <p>يوفر النظام نظام إدارة مشاريع متكامل بدورة حياة كاملة لإنتاج المحتوى التعليمي:</p>
+
+        <div style="text-align:center; font-size:1.5rem; margin:24px 0; direction:ltr;">
+            💬 نقاش &rarr; 📋 تخطيط &rarr; 🔄 تنفيذ &rarr; ✅ مراجعة &rarr; 📦 نشر
+        </div>
+
+        <table>
+            <thead>
+                <tr><th>المرحلة</th><th>الأمر</th><th>الوصف</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>💬 نقاش</td><td><code>/project-discuss</code></td><td>طرح الفكرة ومناقشتها وجمع المقترحات</td></tr>
+                <tr><td>📋 تخطيط</td><td><code>/project-plan</code></td><td>تحويل النقاش إلى خطة تنفيذية مفصلة</td></tr>
+                <tr><td>🔄 تنفيذ</td><td><code>/project-start</code></td><td>بدء إنتاج المحتوى وفق الخطة</td></tr>
+                <tr><td>✅ مراجعة</td><td><code>/review</code></td><td>مراجعة المحتوى وفق معايير الجودة</td></tr>
+                <tr><td>📦 نشر</td><td><code>/export</code></td><td>تصدير المحتوى النهائي</td></tr>
+            </tbody>
+        </table>
+
+        <div class="example">
+            <h4>مثال: إنشاء سلسلة قصص عن الأمان الرقمي</h4>
+            <pre><code># 1. إنشاء مشروع جديد
+/project-new سلسلة الأمان الرقمي --age 8-10
+
+# 2. مناقشة الأفكار
+/project-discuss أفكار حلقات السلسلة
+
+# 3. وضع الخطة التنفيذية
+/project-plan
+
+# 4. بدء التنفيذ
+/project-start
+
+# 5. متابعة الحالة
+/project-status</code></pre>
+        </div>
+        <p>جميع ملفات المشاريع تُحفظ في مجلد <code>projects/</code> في جذر المشروع.</p>
     </section>
 
     <!-- 4. AGE GROUPS -->
@@ -631,6 +717,33 @@ cd cyberpsych-kids</code></pre>
                 <p>أدلة إرشادية وأدوات مراقبة واعية لحماية الأطفال مع احترام استقلاليتهم.</p>
                 <span class="level">والدين</span>
             </div>
+        </div>
+    </section>
+
+    <!-- CULTURAL THEMES -->
+    <section id="themes">
+        <h2>الثيم الثقافي</h2>
+        <p>يستخدم النظام <strong>الثيم المصري</strong> (عربي إسلامي مصري) كثيم افتراضي. الشخصيات الأساسية: <strong>يوسف، مريم، عمر، حبيبة</strong>.</p>
+        <p>يمكنك تغيير الثيم الثقافي لأي أمر محتوى باستخدام معامل <code>--theme</code>:</p>
+
+        <table>
+            <thead>
+                <tr><th>الثيم</th><th>الوصف</th><th>مثال</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>egyptian</code></td><td>مصري عربي إسلامي (افتراضي)</td><td><code>--theme egyptian</code></td></tr>
+                <tr><td><code>gulf</code></td><td>خليجي</td><td><code>--theme gulf</code></td></tr>
+                <tr><td><code>levantine</code></td><td>شامي</td><td><code>--theme levantine</code></td></tr>
+                <tr><td><code>maghreb</code></td><td>مغاربي</td><td><code>--theme maghreb</code></td></tr>
+                <tr><td><code>universal-arabic</code></td><td>عربي عام</td><td><code>--theme universal-arabic</code></td></tr>
+                <tr><td><code>universal</code></td><td>عالمي</td><td><code>--theme universal</code></td></tr>
+            </tbody>
+        </table>
+
+        <div class="example">
+            <h4>مثال: إنشاء قصة بثيم خليجي</h4>
+            <pre><code>/story الخصوصية الرقمية --age 6-8 --output html --lang ar --theme gulf</code></pre>
+            <p>سيتم استخدام أسماء وتعبيرات وسياق ثقافي خليجي بدلاً من المصري الافتراضي.</p>
         </div>
     </section>
 

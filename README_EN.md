@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blue.svg)]()
 [![Age Groups](https://img.shields.io/badge/Age_Groups-10-orange.svg)]()
-[![Commands](https://img.shields.io/badge/Commands-22-purple.svg)]()
+[![Commands](https://img.shields.io/badge/Commands-27-purple.svg)]()
 
 **A comprehensive system for creating creative educational content about cyber psychology for children and young adults**
 
@@ -18,16 +18,19 @@
 
 ## What is this project?
 
-**CyberPsych Kids** is a complete content creation system powered by Claude Code, designed to protect Arab children and youth in the digital world. The project delivers awareness content grounded in cyber psychology research, aligned with Islamic values and Arab culture.
+**CyberPsych Kids** is a complete content creation system powered by Claude Code, designed to protect Arab children and youth in the digital world. The project delivers awareness content grounded in cyber psychology research, aligned with Islamic values and Arab culture. **Default theme: Egyptian Arabic Islamic**.
 
-The system covers **10 age groups** from age 2 through 40, and provides **22 specialized commands** for generating stories, games, video scripts, lesson plans, interactive activities, and more.
+The system covers **10 age groups** from age 2 through 40, and provides **27 specialized commands** for generating stories, games, video scripts, lesson plans, interactive activities, a full project management system, and more. Core characters: Youssef, Mariam, Omar, Habiba.
 
 ---
 
 ## Features
 
 - **10 age groups** covering all developmental stages from early childhood to digital parenting
-- **22 specialized commands** for creating diverse educational content
+- **27 specialized commands** for creating diverse educational content
+- **Project management system** with full lifecycle: Discussion > Planning > Implementation > Review > Publish
+- **Egyptian theme by default** (Egyptian Arabic Islamic) with support for other themes via `--theme`
+- **`--theme` parameter** for all content commands (egyptian, gulf, levantine, maghreb, universal-arabic, universal)
 - **10 ready-made templates** to accelerate content production
 - **14 knowledge files** forming the scientific foundation of the system
 - **Evidence-based methodology** rooted in cyber psychology research
@@ -61,7 +64,7 @@ The system covers **10 age groups** from age 2 through 40, and provides **22 spe
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/cyberpsych-kids.git
+git clone https://github.com/IbrahimBadawy/cyberpsych-kids.git
 cd cyberpsych-kids
 ```
 
@@ -107,11 +110,55 @@ Claude will automatically read the `CLAUDE.md` configuration file and activate a
 | 20 | `/therapy-plan` | Prepare a therapy plan for cyber-related issues | Therapy Plan |
 | 21 | `/family-game` | Design a family game about digital safety | Family Game Kit |
 | 22 | `/tool-guide` | Guide for safely using a digital tool | Tool Guide |
+| 23 | `/project-new` | Create a new content project | Project Folder |
+| 24 | `/project-discuss` | Start a discussion about a project idea | Discussion Document |
+| 25 | `/project-plan` | Convert discussion into an execution plan | Project Plan |
+| 26 | `/project-start` | Start project implementation | Content Files |
+| 27 | `/project-status` | Show current project status | Status Report |
 
 ### General Command Syntax
 
 ```
-/command [topic] --age [age-group] --output [output-type] --lang [language]
+/command [topic] --age [age-group] --output [output-type] --lang [language] --theme [cultural-theme]
+```
+
+> **Note:** The default theme is `egyptian` (Egyptian Arabic Islamic). Available themes: `egyptian`, `gulf`, `levantine`, `maghreb`, `universal-arabic`, `universal`
+
+---
+
+## Project Management
+
+The system provides a full project management system with a complete lifecycle:
+
+```
+💬 Discussion → 📋 Planning → 🔄 Implementation → ✅ Review → 📦 Publish
+```
+
+| Phase | Command | Description |
+|---|---|---|
+| Discussion | `/project-discuss` | Brainstorm and discuss the idea |
+| Planning | `/project-plan` | Convert discussion into an execution plan |
+| Implementation | `/project-start` | Start content production |
+| Tracking | `/project-status` | Show project status |
+| Creation | `/project-new` | Create a new project directly |
+
+### Example: Creating a Story Series Project
+
+```bash
+# 1. Create a new project
+/project-new digital-safety-series --age 8-10
+
+# 2. Discuss ideas
+/project-discuss episode ideas for the series
+
+# 3. Create the plan
+/project-plan
+
+# 4. Start implementation
+/project-start
+
+# 5. Check status
+/project-status
 ```
 
 ---
@@ -136,6 +183,16 @@ Claude will automatically read the `CLAUDE.md` configuration file and activate a
 ### Write a video script about digital footprint
 ```bash
 /video-script digital-footprint --age 14-16 --output markdown --lang ar
+```
+
+### Create a story with Gulf theme
+```bash
+/story digital-privacy --age 6-8 --output html --lang ar --theme gulf
+```
+
+### Create a new project
+```bash
+/project-new internet-heroes-series --age 8-10
 ```
 
 ---
@@ -165,6 +222,7 @@ cyberpsych-kids/
 │   ├── game-design-doc-template.md
 │   ├── lesson-plan-template.md
 │   └── workshop-template.md
+├── projects/                  # Content projects (project management system)
 ├── output/                    # Generated content
 │   ├── stories/
 │   ├── videos/
