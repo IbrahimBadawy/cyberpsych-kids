@@ -1,6 +1,9 @@
 # Output files (user-generated content)
 output/
 
+# Projects (private content - not for GitHub)
+projects/
+
 # Audio files (too large for git)
 docs/*.m4a
 docs/*.mp3
