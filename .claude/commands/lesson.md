@@ -23,6 +23,7 @@ metadata:
 - --duration [30min|45min|60min] - افتراضي: 45min
 - --output [html|markdown|slides] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 
 ## الخطوات
 1. **اقرأ** knowledge/04-age-frameworks.md

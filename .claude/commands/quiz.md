@@ -24,6 +24,7 @@ metadata:
 - --type [mcq|truefalse|scenario|mixed] - افتراضي: mixed
 - --output [html|markdown|json] - افتراضي: html
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 
 ## الخطوات
 1. **اقرأ** knowledge/04-age-frameworks.md

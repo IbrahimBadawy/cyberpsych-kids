@@ -23,6 +23,7 @@ metadata:
 - --role [hero|friend|mentor|villain|parent] - مطلوب
 - --output [html|markdown|prompts] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 
 ## الخطوات
 1. **اقرأ** knowledge/10-character-bible.md

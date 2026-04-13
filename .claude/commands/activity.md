@@ -24,6 +24,7 @@ metadata:
 - --type [physical|art|mental|therapeutic|mindfulness] - مطلوب
 - --output [html|markdown|instructions|prompts] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 
 ## الخطوات
 

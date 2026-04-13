@@ -24,6 +24,7 @@ metadata:
 - --episodes [5|8|10|12] - افتراضي: 8
 - --output [html|markdown] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 
 ## الخطوات
 1. **اقرأ** knowledge/04-age-frameworks.md و knowledge/03-digital-problems.md

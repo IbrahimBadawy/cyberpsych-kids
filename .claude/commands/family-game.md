@@ -25,6 +25,7 @@ metadata:
 - --players [2-4|3-6|4-8] - افتراضي: 3-6
 - --output [html|instructions|markdown] - افتراضي: instructions
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 
 ## الخطوات
 1. **اقرأ** knowledge/09-gamification-guide.md

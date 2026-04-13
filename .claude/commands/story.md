@@ -23,6 +23,17 @@ metadata:
 - --output [html|markdown|prompts] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
 - --scenes [3-5|5-8|8-12] - افتراضي: حسب العمر
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
+
+### الثيمات المتاحة
+| الثيم | الأسماء | البيئة | اللهجة في الحوار |
+|---|---|---|---|
+| **egyptian** (افتراضي) | يوسف، مريم، عمر، حبيبة | مدارس مصرية، شوارع مصرية | فصحى مبسطة + تعبيرات مصرية |
+| **gulf** | أمان، نورة، فارس، سديم | بيئة خليجية | فصحى مبسطة + تعبيرات خليجية |
+| **levantine** | كريم، لين، سامر، رنا | بيئة شامية | فصحى مبسطة + تعبيرات شامية |
+| **maghreb** | أمين، إيمان، ياسين، سلمى | بيئة مغاربية | فصحى مبسطة |
+| **universal-arabic** | أسماء عربية عامة | بيئة عربية عامة | فصحى مبسطة فقط |
+| **universal** | أسماء محايدة | بيئة عامة | عربية أو إنجليزية |
 
 ## الخطوات
 1. **اقرأ** knowledge/07-storytelling-techniques.md
@@ -72,6 +83,8 @@ metadata:
 ## أمثلة
 ```
 /story "التنمر الإلكتروني" --age 8-10 --output html --lang ar
+/story "التنمر الإلكتروني" --age 8-10 --output html --theme gulf
 /story "كلمة السر القوية" --age 4-6 --scenes 5 --output prompts
 /story "FOMO" --age 12-14 --output markdown --lang both
+/story "الخصوصية" --age 6-8 --theme egyptian --output html
 ```

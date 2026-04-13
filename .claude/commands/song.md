@@ -22,6 +22,7 @@ metadata:
 - --age [2-4|4-6|6-8|8-10|10-12] - مطلوب (الأغاني للأطفال حتى 12)
 - --output [html|markdown|prompts] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 - --style [nasheed|song|rap|chant] - افتراضي: nasheed
 
 ## الخطوات

@@ -22,6 +22,7 @@ metadata:
 - --age [2-4|4-6|6-8|8-10|10-12|12-14|14-16|16-18|18-28|28-40] - مطلوب
 - --output [html|markdown|slides|instructions] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 - --duration [2h|3h|4h] - افتراضي: 2h
 - --mode [in-person|virtual|hybrid] - افتراضي: in-person
 

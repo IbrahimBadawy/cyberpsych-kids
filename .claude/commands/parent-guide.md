@@ -22,6 +22,7 @@ metadata:
 - --age [عمر الطفل المعني] - مطلوب
 - --output [html|markdown|instructions] - افتراضي: markdown
 - --lang [ar|en|both] - افتراضي: ar
+- --theme [egyptian|gulf|levantine|maghreb|universal-arabic|universal] - افتراضي: egyptian
 
 ## الخطوات
 1. **اقرأ** knowledge/03-digital-problems.md و knowledge/05-treatment-techniques.md
